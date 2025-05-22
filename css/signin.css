@@ -1,0 +1,257 @@
+/* Main content container */
+.main-content {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Sign-in Form Styles */
+.signin-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signin-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Login header section - updated with better spacing */
+.login-header {
+    padding: 30px 40px; /* Further increased padding to move content away from edges */
+    text-align: center; /* Center the text content */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Add subtle border at the bottom */
+}
+
+.logo-bg {
+    margin-bottom: 15px;
+}
+
+.logo-content {
+    display: flex;
+    justify-content: center; /* Center the logo */
+    align-items: center;
+    position: relative;
+}
+
+.nav-brand h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    text-align: center;
+}
+
+/* Decorative elements */
+.decorative-elements {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.document {
+    width: 10px;
+    height: 12px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.document-2 {
+    margin-left: -5px;
+    transform: rotate(10deg);
+}
+
+.welcome-section {
+    margin-top: 15px;
+    text-align: center; /* Ensure text is centered */
+}
+
+.welcome-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.signin-form {
+    padding: 20px 30px; /* Increased horizontal padding */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #537be1;
+    outline: none;
+}
+
+.form-group input:hover {
+    border-color: #a2b3c3;
+}
+
+/* Form options (remember me & forgot password) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #537be1;
+}
+
+.forgot-password {
+    color: #537be1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Error message styles */
+.error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 16px;
+}
+
+/* Password toggle button */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    color: #666;
+}
+
+.toggle-password:hover {
+    color: #537be1;
+}
+
+/* Form actions - updated for larger sign-in button */
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Larger sign-in button */
+.form-actions .btn-primary {
+    width: 160px; /* Make button full width */
+    padding: 14px 20px; /* Increase vertical padding */
+    font-size: 16px; /* Increase font size */
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background-color: #5375db; /* Match the exact color from the reference */
+}
+
+.form-actions .btn-primary:hover {
+    background-color: #4568c5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(69, 104, 197, 0.2);
+}
+
+.form-footer {
+    margin-top: 20px; /* Increased from 15px */
+    text-align: center;
+    font-size: 14px;
+    color: #848484;
+}
+
+.form-footer a {
+    color: #537be1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Form validation styles */
+input:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: #2ecc71;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .signin-container {
+        padding: 10px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

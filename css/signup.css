@@ -1,0 +1,219 @@
+/* Signup Form Styles */
+.signup-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.signup-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.signup-form {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #537be1;
+    outline: none;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #a2b3c3;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #848484;
+}
+
+.form-footer a {
+    color: #537be1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Error message styles */
+.error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 16px;
+}
+
+/* Custom select styles */
+.custom-select {
+    position: relative;
+}
+
+.select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #666;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+select:focus + .select-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Enhanced dropdown styles for better UX */
+.custom-select select {
+    padding-right: 30px; /* Make space for the arrow */
+}
+
+.custom-select select:focus {
+    box-shadow: 0 0 0 2px rgba(83, 123, 225, 0.2);
+}
+
+/* Style for service category dropdown */
+#business {
+    color: #555;
+    font-weight: 500;
+}
+
+#business option {
+    padding: 8px;
+}
+
+#business option:first-child {
+    color: #888;
+}
+
+/* Add a subtle animation when dropdown is opened */
+.custom-select:focus-within {
+    box-shadow: 0 0 5px rgba(83, 123, 225, 0.3);
+}
+
+/* Password toggle button */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    color: #666;
+}
+
+.toggle-password:hover {
+    color: #537be1;
+}
+
+/* Form validation styles */
+input:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: #2ecc71;
+}
+
+/* Category colors for service types */
+/* option[value="Airtime & Data"] {
+    color: #3498db;
+}
+
+option[value="Food & Delivery"] {
+    color: #e67e22;
+}
+
+option[value="Skincare & Beauty"] {
+    color: #9b59b6;
+}
+
+option[value="Events & Concerts"] {
+    color: #16a085;
+} */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Scrollable dropdown for universities with many options */
+select[name="university"] {
+    max-height: 200px;
+}

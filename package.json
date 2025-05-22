@@ -1,0 +1,13 @@
+{
+  "name": "vendo-website",
+  "version": "1.0.0",
+  "description": "Vendo marketplace website",
+  "main": "server.js",
+  "scripts": {
+    "dev": "http-server . -p 3000 --cors -a 0.0.0.0"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "serve": "^14.2.0"
+  }
+}

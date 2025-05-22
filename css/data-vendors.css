@@ -1,0 +1,302 @@
+/* Data Vendors Page Specific Styles */
+:root {
+    --yellow-card: #fff8e1;
+    --blue-card: #e3f2fd;
+    --red-card: #ffebee;
+    --green-card: #e8f5e9;
+    --purple-card: #f3e5f5;
+    --orange-card: #fff3e0;
+    --yellow-border: #ffc107;
+    --blue-border: #2196f3;
+    --red-border: #f44336;
+    --green-border: #4caf50;
+    --purple-border: #9c27b0;
+    --orange-border: #ff9800;
+}
+
+/* Page Header Styles */
+.page-header {
+    margin-bottom: 30px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb .material-icons {
+    font-size: 18px;
+    margin: 0 5px;
+    color: var(--dark-gray);
+}
+
+.breadcrumb .current {
+    color: var(--dark-gray);
+}
+
+.page-header h1 {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: var(--dark-gray);
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Filter Options in Sidebar */
+.filter-options {
+    padding: 10px 0;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter-option input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+}
+
+.filter-option label {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* Vendors Grid Layout */
+.vendors-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Colored Vendor Cards - Similar to reference image */
+.vendor-card {
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vendor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Color variants for cards */
+.vendor-card.yellow {
+    background-color: var(--yellow-card);
+    border-left: 5px solid var(--yellow-border);
+}
+
+.vendor-card.blue {
+    background-color: var(--blue-card);
+    border-left: 5px solid var(--blue-border);
+}
+
+.vendor-card.red {
+    background-color: var(--red-card);
+    border-left: 5px solid var(--red-border);
+}
+
+.vendor-card.green {
+    background-color: var(--green-card);
+    border-left: 5px solid var(--green-border);
+}
+
+.vendor-card.purple {
+    background-color: var(--purple-card);
+    border-left: 5px solid var(--purple-border);
+}
+
+.vendor-card.orange {
+    background-color: var(--orange-card);
+    border-left: 5px solid var(--orange-border);
+}
+
+.vendor-info {
+    flex: 1;
+}
+
+.vendor-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rating .material-icons {
+    color: gold;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.vendor-desc {
+    font-size: 14px;
+    margin: 0 0 15px;
+    color: var(--text-color);
+}
+
+.vendor-detail {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--dark-gray);
+    margin: 0;
+}
+
+.vendor-detail .material-icons {
+    font-size: 16px;
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.vendor-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.view-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Special Offers Section */
+.special-offers {
+    margin-bottom: 40px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.offer-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.offer-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.offer-card:nth-child(2) .offer-badge {
+    background-color: #ff5722;
+}
+
+.offer-card:nth-child(3) .offer-badge {
+    background-color: #4caf50;
+}
+
+.offer-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.offer-card p {
+    font-size: 14px;
+    color: var(--dark-gray);
+    margin: 0 0 15px;
+    line-height: 1.4;
+}
+
+.offer-provider {
+    font-size: 13px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.offer-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.offer-btn:hover {
+    background-color: #4568c5;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .vendors-container {
+        grid-template-columns: 1fr;
+    }
+
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+}

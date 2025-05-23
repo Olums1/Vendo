@@ -144,7 +144,7 @@
     <div class="dashboard-wrapper">
         <!-- Main Navigation -->
         <nav class="main-navigation">
-            <div class="nav-container" style="position: relative; display: flex; align-items: center;">
+            <div class="nav-container">
                 <div class="nav-brand">
                     <a href="index.html"><h1>Vendo</h1></a>
                 </div>
@@ -161,13 +161,18 @@
                     </div>
                 </div>
 
-                <div class="nav-upload-btn" style="position: absolute; left: 50%; transform: translateX(-50%);">
-                    <a href="upload-product.html" class="btn btn-primary upload-nav-btn"
+                <div class="nav-upload-btn">
+                    <a href="upload-product.html" class="btn btn-primary upload-nav-btn" 
                     style="background:#3f51b5;color:#fff;font-weight:600;padding:7px 18px;
-                    border-radius:7px;font-size:15px;">Upload</a>
+                    border-radius:7px;font-size:15px;margin-right:20px;">Upload</a>
                 </div>
 
-                <div class="nav-user" style="margin-left: auto;">
+                <div class="nav-user">
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+                        </ul>
+                    </div>
                     <div class="user-menu">
                         <span class="material-icons">person</span>
                         <span class="user-name">Profile</span>
@@ -194,13 +199,33 @@
                         <li><a href="index.html"><span class="material-icons">all_inclusive</span> All Services</a></li>
                         <li class="active"><a href="tech-gadgets.html"><span class="material-icons">devices</span> Tech & Gadgets</a></li>
                         <li><a href="food-delivery.html"><span class="material-icons">restaurant</span> Food & Delivery</a></li>
-                        <li><a href="skincare-vendors.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
+                        <li><a href="skincare-beauty.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
                         <li><a href="events-concerts.html"><span class="material-icons">event</span> Events & Concerts</a></li>
                         <li><a href="fashion-accessories.html"><span class="material-icons">checkroom</span> Fashion & Accessories</a></li>
                         <li><a href="home-services.html"><span class="material-icons">home_repair_service</span> Home Services</a></li>
                         <li><a href="chinese-vendors.html"><span class="material-icons">local_florist</span> Chinese Vendors</a></li>
                     </ul>
                 </div>
+
+                <!-- <div class="sidebar-section">
+                    <h3>Filter By</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><span class="material-icons">smartphone</span> Phones & Accessories</a></li>
+                        <li><a href="#"><span class="material-icons">headset</span> Audio</a></li>
+                        <li><a href="#"><span class="material-icons">computer</span> Computing</a></li>
+                        <li><a href="#"><span class="material-icons">tv</span> Home Electronics</a></li>
+                        <li><a href="#"><span class="material-icons">watch</span> Wearables</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- <div class="sidebar-section">
+                    <h3>Quick Links</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><span class="material-icons">local_offer</span> Today's Deals</a></li>
+                        <li><a href="#"><span class="material-icons">star</span> Top Rated</a></li>
+                        <li><a href="#"><span class="material-icons">trending_up</span> Popular</a></li>
+                    </ul>
+                </div> -->
             </aside>
 
             <div class="sidebar-overlay"></div>
@@ -213,6 +238,9 @@
                         <h2>Tech & Gadgets</h2>
                         <p>Find the latest tech products and gadgets from trusted vendors</p>
                     </div>
+<!--                     <div class="banner-cta">
+                        <button class="btn btn-primary">Filter Products</button>
+                    </div> -->
                 </section>
 
                 <!-- Products Section -->
@@ -243,7 +271,7 @@
                                 <div class="product-category">Accessories</div>
                                 <h3 class="product-name">Powerbank</h3>
                                 <div class="product-price">&#8358;29,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -257,7 +285,7 @@
                                 <div class="product-category">Accessories</div>
                                 <h3 class="product-name">Oraimo Fast Charger</h3>
                                 <div class="product-price">&#8358;24,500</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -271,7 +299,7 @@
                                 <div class="product-category">Audio</div>
                                 <h3 class="product-name">Oraimo Airpods</h3>
                                 <div class="product-price">&#8358;39,999</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -285,7 +313,7 @@
                                 <div class="product-category">Audio</div>
                                 <h3 class="product-name">Galaxy Buds3 Pro</h3>
                                 <div class="product-price">&#8358;84,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -299,7 +327,7 @@
                                 <div class="product-category">Audio</div>
                                 <h3 class="product-name">Apple Airpods Pro</h3>
                                 <div class="product-price">&#8358;179,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -313,7 +341,7 @@
                                 <div class="product-category">Audio</div>
                                 <h3 class="product-name">JBL Speaker</h3>
                                 <div class="product-price">&#8358;59,900</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -327,7 +355,7 @@
                                 <div class="product-category">Wearables</div>
                                 <h3 class="product-name">Apple Watch</h3>
                                 <div class="product-price">&#8358;399,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -341,7 +369,7 @@
                                 <div class="product-category">Phones</div>
                                 <h3 class="product-name">iPhone 15 Pro</h3>
                                 <div class="product-price">&#8358;1,099,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -355,7 +383,7 @@
                                 <div class="product-category">Phones</div>
                                 <h3 class="product-name">Galaxy S25 Ultra</h3>
                                 <div class="product-price">&#8358;1,180,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -369,7 +397,7 @@
                                 <div class="product-category">Tablets</div>
                                 <h3 class="product-name">Galaxy Tab S6 Lite</h3>
                                 <div class="product-price">&#8358;350,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -383,7 +411,7 @@
                                 <div class="product-category">Tablets</div>
                                 <h3 class="product-name">iPad Pro</h3>
                                 <div class="product-price">&#8358;899,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -397,7 +425,7 @@
                                 <div class="product-category">Laptops</div>
                                 <h3 class="product-name">Apple Macbook</h3>
                                 <div class="product-price">&#8358;1,299,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -411,7 +439,7 @@
                                 <div class="product-category">Laptops</div>
                                 <h3 class="product-name">HP Laptop</h3>
                                 <div class="product-price">&#8358;820,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>
@@ -425,7 +453,7 @@
                                 <div class="product-category">Audio</div>
                                 <h3 class="product-name">Headset</h3>
                                 <div class="product-price">&#8358;49,000</div>
-
+                                
                                 <div class="product-actions">
                                     <button class="add-to-cart">Add to Cart</button>
                                     <button class="buy-now">Buy Now</button>

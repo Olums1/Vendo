@@ -8,23 +8,6 @@
     --light-gray: #f5f5f5;
 }
 
-/* Nav container enhancements */
-.nav-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.nav-upload-btn {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.nav-user {
-    margin-left: auto;
-}
-
 /* Product Grid Layout */
 .product-grid {
     display: grid;
@@ -162,111 +145,7 @@
     }
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
-    /* Adjust upload button on mobile */
-    .nav-upload-btn {
-        position: static !important;
-        transform: none !important;
-        margin-left: auto;
-        margin-right: 15px;
-        order: 2;
-    }
-
-    /* Media Queries for sidebar and mobile navigation */
-    .sidebar {
-        transform: translateX(-100%) !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 260px;
-        height: 100vh;
-        background: white;
-        box-shadow: 2px 0 12px rgba(0,0,0,0.15);
-        z-index: 1002;
-        opacity: 1;
-        margin-bottom: 0;
-        border-radius: 0;
-        padding-top: 64px;
-        display: block;
-        transition: transform 0.3s cubic-bezier(.7,.3,0,1);
-    }
-
-    .sidebar.open {
-        transform: translateX(0) !important;
-        box-shadow: 4px 0 24px rgba(0,0,0,0.18);
-    }
-
-    /* Mobile navigation layout */
-    .main-navigation {
-        position: relative;
-    }
-
-    .main-navigation .nav-container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        padding: 5px 15px;
-        min-height: 56px;
-        height: auto;
-    }
-
-    /* Reorder elements for mobile */
-    .sidebar-toggle {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        margin-right: 10px;
-        order: 0;
-        position: static;
-        z-index: 1201;
-    }
-
-    .nav-brand {
-        display: flex;
-        align-items: center;
-        order: 1;
-        flex: 0 0 auto;
-    }
-
-    .nav-user {
-        order: 3;
-        position: relative;
-        padding-right: 5px;
-    }
-
-    .nav-search {
-        order: 4;
-        flex: 1 0 100%;
-        max-width: 100%;
-        margin: 8px 0 5px;
-    }
-
-    .sidebar-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0,0,0,0.18);
-        z-index: 1800;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-    }
-
-    .sidebar-overlay.active {
-        display: block;
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    /* Product buttons on mobile */
     .add-to-cart {
         background-color: var(--tech-color);
         color: white;
@@ -283,11 +162,11 @@
         min-width: 70px;
         box-sizing: border-box;
     }
-
+    
     .add-to-cart:hover {
         background-color: #455a64;
     }
-
+    
     .buy-now {
         background-color: black;
         color: white;
@@ -307,8 +186,80 @@
     .buy-now:hover {
         background-color: #333;
     }
+    /* Sidebar mobile styles */
+    .sidebar {
+        transform: translateX(-100%) !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        height: 100vh;
+        background: white;
+        box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+        z-index: 1002;
+        opacity: 1;
+        margin-bottom: 0;
+        border-radius: 0;
+        padding-top: 64px;
+        display: block;
+        transition: transform 0.3s cubic-bezier(.7,.3,0,1);
+    }
+    .sidebar.open {
+        transform: translateX(0) !important;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.18);
+    }
+    .sidebar-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 20px;
+        top: 18px;
+        background: none;
+        border: none;
+        font-size: 26px;
+        z-index: 1100;
+        cursor: pointer;
+    }
+    .main-navigation .nav-container {
+        position: relative;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+    .nav-brand {
+        display: flex;
+        align-items: center;
+    }
+    .sidebar-toggle {
+        margin-left: 18px;
+        position: static;
+        left: auto;
+        top: auto;
+        z-index: 1201;
+        background: white;
+    }
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.26);
+        z-index: 1001;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    .sidebar-overlay.active {
+        display: block;
+        opacity: 1;
+        pointer-events: all;
+    }
 }
-
 @media (min-width: 769px) {
     .sidebar-toggle {
         display: none !important;

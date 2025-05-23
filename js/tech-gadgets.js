@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initSidebarToggle(); // Sidebar toggle functionality for mobile
     initSidebar(); // Ensure sidebar links are initialized
     initAnimation();
+    initProfileDropdown(); // Add profile dropdown functionality
 });
 
+// Sidebar toggle functionality
 function initSidebarToggle() {
     const sidebarToggle = document.querySelector('.sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
@@ -13,6 +15,7 @@ function initSidebarToggle() {
     const body = document.body;
 
     function openSidebar() {
+        console.log('Sidebar toggle clicked: opening sidebar');
         if (sidebar) sidebar.classList.add('open');
         if (overlay) overlay.classList.add('active');
         body.style.overflow = 'hidden'; // prevent scrolling
@@ -33,9 +36,46 @@ function initSidebarToggle() {
             }
         });
     }
+    // Always expose closeSidebar but do not programmatically open sidebar EXCEPT via toggle
     window.closeSidebar = closeSidebar;
 }
 
+// Profile dropdown functionality
+function initProfileDropdown() {
+    const userMenu = document.querySelector('.user-menu');
+    const dropdown = document.getElementById('profileDropdown');
+    const dropdownIcon = userMenu ? userMenu.querySelector('.dropdown-icon') : null;
+
+    // Toggle dropdown on profile/icon click
+    function toggleDropdown(e) {
+        e.stopPropagation();
+        if (dropdown) {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    }
+    if (userMenu) {
+        userMenu.addEventListener('click', toggleDropdown);
+    }
+    // Hide on outside click
+    document.addEventListener('click', function (e) {
+        if (dropdown && userMenu && !userMenu.contains(e.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+
+    // Logout handler
+    window.logoutUser = function() {
+        // Clear user info etc.
+        localStorage.removeItem('userName');
+        window.location.href = 'signin.html';
+    };
+    // For custom toggle in HTML (if needed)
+    window.toggleProfileDropdown = function() {
+        if (dropdown) {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    };
+}
 
 // Initialize product cards with interaction and order drawer
 function initProducts() {

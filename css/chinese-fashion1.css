@@ -1,0 +1,564 @@
+/* Food Vendors Page Specific Styles */
+:root {
+    /* Food-themed colors based on the reference image */
+    --yellow-card: #fff8e1;  /* Light yellow for desserts */
+    --blue-card: #e3f2fd;    /* Light blue for seafood */
+    --red-card: #ffebee;     /* Light red for spicy food */
+    --green-card: #e8f5e9;   /* Light green for healthy food */
+    --purple-card: #f3e5f5;  /* Light purple for exotic cuisine */
+    --orange-card: #fff3e0;  /* Light orange for local dishes */
+    --yellow-border: #ffffff;  /* Yellow border */
+    --blue-border: #ffffff;    /* Blue border */
+    --red-border: #ffffff;     /* Red border */
+    --green-border: #ffffff;   /* Green border */
+    --purple-border: #ffffff;  /* Purple border */
+    --orange-border: #ffffff;  /* Orange border */
+    --primary-rgb: 69, 104, 220; /* Primary color as RGB values for transparency */
+}
+
+/* Page Header Styles */
+.page-header {
+    margin-bottom: 30px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb .material-icons {
+    font-size: 18px;
+    margin: 0 5px;
+    color: var(--dark-gray);
+}
+
+.breadcrumb .current {
+    color: var(--dark-gray);
+}
+
+.page-header h1 {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: var(--dark-gray);
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Filter Options in Sidebar */
+.filter-options {
+    padding: 10px 0;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter-option input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+}
+
+.filter-option label {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* Vendors Grid Layout */
+.vendors-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px; /* Slightly increased gap */
+    margin-bottom: 40px; /* Add more space before special offers */
+}
+
+/* Colored Vendor Cards - Updated to top-bottom layout */
+.vendor-card {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s, transform 0.2s;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Add subtle background tint to each card */
+.vendor-card.yellow {
+    background: linear-gradient(to bottom, var(--yellow-card), white);
+}
+
+.vendor-card.blue {
+    background: linear-gradient(to bottom, var(--blue-card), white);
+}
+
+.vendor-card.red {
+    background: linear-gradient(to bottom, var(--red-card), white);
+}
+
+.vendor-card.green {
+    background: linear-gradient(to bottom, var(--green-card), white);
+}
+
+.vendor-card.purple {
+    background: linear-gradient(to bottom, var(--purple-card), white);
+}
+
+.vendor-card.orange {
+    background: linear-gradient(to bottom, var(--orange-card), white);
+}
+
+.vendor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container - top part */
+.vendor-card-image-container {
+    width: 100%;
+    height: 140px; /* Fixed height for images */
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    flex-shrink: 0;
+}
+
+.vendor-card-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+    z-index: 1;
+}
+
+.vendor-card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.vendor-card:hover .vendor-card-bg {
+    transform: scale(1.08); /* Slightly more zoom on hover */
+}
+
+/* Content container - bottom part */
+.vendor-card-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+    min-height: 0;
+}
+
+/* Color variants for cards - updated to style the top border of content section */
+.vendor-card.yellow .vendor-card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--yellow-border);
+}
+
+.vendor-card.blue .vendor-card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--blue-border);
+}
+
+.vendor-card.red .vendor-card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--red-border);
+}
+
+.vendor-card.green .vendor-card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--green-border);
+}
+
+.vendor-card.purple .vendor-card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--purple-border);
+}
+
+.vendor-card.orange .vendor-card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--orange-border);
+}
+
+.vendor-info {
+    flex: 1 1 auto;
+}
+
+.vendor-info h3 {
+    font-size: 15px; /* Increased font size */
+    font-weight: 600;
+    margin: 0 0 10px; /* Increased bottom margin */
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.vendor-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.vendor-card.yellow .vendor-info h3::after {
+    background-color: var(--yellow-border);
+}
+
+.vendor-card.blue .vendor-info h3::after {
+    background-color: var(--blue-border);
+}
+
+.vendor-card.red .vendor-info h3::after {
+    background-color: var(--red-border);
+}
+
+.vendor-card.green .vendor-info h3::after {
+    background-color: var(--green-border);
+}
+
+.vendor-card.purple .vendor-info h3::after {
+    background-color: var(--purple-border);
+}
+
+.vendor-card.orange .vendor-info h3::after {
+    background-color: var(--orange-border);
+}
+
+/* Truncate vendor description to 3 lines with ellipsis */
+.vendor-desc {
+    font-size: 13px;
+    margin: 0 0 12px;
+    color: var(--text-color);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;              /* Add this line for future compatibility */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(1.4em * 3); /* safe for non-webkit browsers */
+    min-height: calc(1.4em * 2); /* ensure similar min height for short text */
+}
+
+.vendor-detail {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--dark-gray);
+    margin: 0;
+    padding: 4px 5px; /* Reduced horizontal padding */
+    border-radius: 12px;
+    display: inline-flex;
+    background-color: rgba(var(--primary-rgb), 0.08);
+    width: fit-content;
+    min-width: 0;
+    max-width: 120px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.vendor-detail .material-icons {
+    font-size: 16px;
+    margin-right: 2px;
+    color: var(--primary-color);
+}
+
+.vendor-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.vendor-contact {
+    display: flex;
+    justify-content: right;
+    margin-top: 0px;
+    margin-right: 1px;
+    margin-bottom: 150px;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 8px 20px; /* Increased padding */
+    background-color: transparent; /* Changed to transparent */
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px; /* Increased border radius */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px; /* Increased font size */
+    transition: all 0.3s ease; /* Smoother transition */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.view-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.view-btn:hover {
+    color: white;
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+.view-btn:hover::before {
+    left: 0;
+}
+
+.vendor-link {
+    display: right;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-top: 11px;
+}
+
+/* Special Offers Section */
+.special-offers {
+    margin-bottom: 40px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.offer-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.offer-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.offer-card:nth-child(2) .offer-badge {
+    background-color: #ff5722; /* Hot badge */
+}
+
+.offer-card:nth-child(3) .offer-badge {
+    background-color: #4caf50; /* Sale badge */
+}
+
+.offer-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.offer-card p {
+    font-size: 14px;
+    color: var(--dark-gray);
+    margin: 0 0 15px;
+    line-height: 1.4;
+}
+
+.offer-provider {
+    font-size: 13px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.offer-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.offer-btn:hover {
+    background-color: #4568c5;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .vendors-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .vendor-card {
+        height: 380px; /* Slightly smaller height */
+    }
+
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .vendors-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile now */
+        gap: 14px; /* Slightly smaller gap for more space */
+    }
+
+    .vendor-card {
+        height: 350px;
+    }
+
+    .vendor-card-image-container {
+        height: 150px;
+    }
+
+    .vendor-card-content {
+        padding: 10px 7px 12px 12px;
+    }
+    .vendor-info {
+        flex: 1 1 auto;
+        margin-top: 2px;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .vendor-desc {
+        font-size: 14px;
+        line-height: 1.5;
+        max-height: calc(1.5em * 4);  /* 3 lines for mobile, adapt to line-height */
+        min-height: calc(1.5em * 3);
+        /* Keep rest of clamping styles from global rule */
+    }
+    .view-btn, .vendor-link {
+        padding: 3px 7px;
+        margin-top: 1px;
+        border: none;
+        border-radius: 6px;
+        padding: 3px 8px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        min-width: 50px;
+        box-sizing: border-box;
+    }
+    .vendor-action {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 15px;
+    }
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-header h1 {
+        font-size: 19px;
+    }
+}
+
+/* For slightly larger mobiles and small tablets, show 3 vendors per row */
+@media (min-width: 481px) and (max-width: 650px) {
+    .vendors-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .vendor-card {
+        height: 260px;
+    }
+    .vendor-info h3 {
+        font-size: 14px;
+    }
+    .vendor-desc {
+        font-size: 11px;
+    }
+    .vendor-card-content {
+        padding: 8px 5px;
+    }
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendo - Airtime & Data Vendors</title>
+    <link rel="stylesheet" href="css/signup1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/data-vendors.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <nav class="main-navigation">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>Vendo</h1>
+                </div>
+
+                <div class="nav-search">
+                    <div class="search-box">
+                        <span class="material-icons">search</span>
+                        <input type="text" placeholder="Search for data vendors...">
+                    </div>
+                </div>
+
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+                        <li><a href="#"><span class="material-icons">receipt</span> Orders</a></li>
+                        <li><a href="#"><span class="material-icons">qr_code_scanner</span> Scan</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-user">
+                    <div class="notification-icon">
+                        <span class="material-icons">notifications</span>
+                        <span class="notification-badge">2</span>
+                    </div>
+                    <div class="user-menu">
+                        <span class="material-icons">person</span>
+                        <span class="user-name">User</span>
+                        <span class="material-icons dropdown-icon">arrow_drop_down</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Categories</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="index.html"><span class="material-icons">all_inclusive</span> All Services</a></li>
+                        <li><a href="data-vendors.html"><span class="material-icons">phone_android</span> Airtime & Data</a></li>
+                        <li><a href="food-vendors.html"><span class="material-icons">restaurant</span> Food & Delivery</a></li>
+                        <li><a href="skincare-vendors.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
+                        <li><a href="#"><span class="material-icons">event</span> Events & Concerts</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Filter</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><span class="material-icons">star</span> Top Rated</a></li>
+                        <li><a href="#"><span class="material-icons">trending_up</span> Popular</a></li>
+                        <li><a href="#"><span class="material-icons">access_time</span> Recently Added</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Network Provider</h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="mtn" checked>
+                            <label for="mtn">MTN</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="airtel" checked>
+                            <label for="airtel">Airtel</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="glo" checked>
+                            <label for="glo">Glo</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="9mobile" checked>
+                            <label for="9mobile">9Mobile</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="dashboard-main">
+                <div class="page-header">
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="material-icons">chevron_right</span>
+                        <span class="current">Airtime & Data</span>
+                    </div>
+                    <h1>Airtime & Data Vendors</h1>
+                    <p class="subtitle">Find verified vendors offering airtime and data services</p>
+                </div>
+
+                <div class="vendors-container">
+                    <div class="vendor-card yellow">
+                        <div class="vendor-info">
+                            <h3>DataHub</h3>
+                            <div class="rating">
+                                <span class="material-icons">star</span>
+                                <span>4.9</span>
+                            </div>
+                            <p class="vendor-desc">Best data bundles for MTN, Airtel, Glo, 9Mobile</p>
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified Vendor</span>
+                            </p>
+                        </div>
+                        <div class="vendor-action">
+                            <a href="#" class="view-btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card blue">
+                        <div class="vendor-info">
+                            <h3>MobileConnect</h3>
+                            <div class="rating">
+                                <span class="material-icons">star</span>
+                                <span>4.8</span>
+                            </div>
+                            <p class="vendor-desc">Fast delivery of airtime and data at great prices</p>
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified Vendor</span>
+                            </p>
+                        </div>
+                        <div class="vendor-action">
+                            <a href="#" class="view-btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card red">
+                        <div class="vendor-info">
+                            <h3>AirtimeXpress</h3>
+                            <div class="rating">
+                                <span class="material-icons">star</span>
+                                <span>4.7</span>
+                            </div>
+                            <p class="vendor-desc">Instant airtime and data services, 24/7 availability</p>
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified Vendor</span>
+                            </p>
+                        </div>
+                        <div class="vendor-action">
+                            <a href="#" class="view-btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card green">
+                        <div class="vendor-info">
+                            <h3>UniData</h3>
+                            <div class="rating">
+                                <span class="material-icons">star</span>
+                                <span>4.6</span>
+                            </div>
+                            <p class="vendor-desc">Special data plans for students with bonus night plans</p>
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified Vendor</span>
+                            </p>
+                        </div>
+                        <div class="vendor-action">
+                            <a href="#" class="view-btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card purple">
+                        <div class="vendor-info">
+                            <h3>DataPlus</h3>
+                            <div class="rating">
+                                <span class="material-icons">star</span>
+                                <span>4.5</span>
+                            </div>
+                            <p class="vendor-desc">Bulk data for groups and affordable social bundles</p>
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified Vendor</span>
+                            </p>
+                        </div>
+                        <div class="vendor-action">
+                            <a href="#" class="view-btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card orange">
+                        <div class="vendor-info">
+                            <h3>NetConnect</h3>
+                            <div class="rating">
+                                <span class="material-icons">star</span>
+                                <span>4.4</span>
+                            </div>
+                            <p class="vendor-desc">Quick recharge for all networks with bonus offers</p>
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified Vendor</span>
+                            </p>
+                        </div>
+                        <div class="vendor-action">
+                            <a href="#" class="view-btn">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="special-offers">
+                    <div class="section-header">
+                        <h2>Special Data Offers</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="offers-grid">
+                        <div class="offer-card">
+                            <div class="offer-badge">New</div>
+                            <h3>Weekend Data Bundle</h3>
+                            <p>Get 10GB for just ₦1,500 valid for the weekend</p>
+                            <div class="offer-provider">By DataHub</div>
+                            <a href="#" class="offer-btn">Get Offer</a>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-badge">Hot</div>
+                            <h3>Campus Special</h3>
+                            <p>5GB for social media at just ₦500 for students</p>
+                            <div class="offer-provider">By MobileConnect</div>
+                            <a href="#" class="offer-btn">Get Offer</a>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-badge">Sale</div>
+                            <h3>Monthly Mega Bundle</h3>
+                            <p>30GB for ₦5,000 with free night browsing</p>
+                            <div class="offer-provider">By UniData</div>
+                            <a href="#" class="offer-btn">Get Offer</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Vendo</h3>
+                    <p>Connecting university students with service providers within their campus.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Become a Vendor</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vendo. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/data-vendors.js"></script>
+</body>
+</html>

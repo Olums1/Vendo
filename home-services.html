@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Services - Vendo</title>
+    <link rel="stylesheet" href="css/signup1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home-services.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="home-services">
+    <div class="dashboard-wrapper">
+        <!-- Main Navigation -->
+        <nav class="main-navigation">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html"><h1>Vendo</h1></a>
+                </div>
+
+                <!-- Hamburger menu for mobile -->
+                <button class="sidebar-toggle" aria-label="Open menu">
+                    <span class="material-icons">menu</span>
+                </button>
+
+                <div class="nav-search">
+                    <button class="search-toggle" aria-label="Search">
+                        <span class="material-icons">search</span>
+                    </button>
+                    <div class="search-box-container">
+                        <div class="search-box">
+                            <span class="material-icons">search</span>
+                            <input type="text" placeholder="Search for services...">
+                            <button class="search-close" aria-label="Close search">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-upload-btn" style="position: absolute; left: 50%; transform: translateX(-50%);">
+                    <a href="upload-product.html" class="btn btn-primary upload-nav-btn"
+                    style="background:#3f51b5;color:#fff;font-weight:600;padding:7px 18px;
+                    border-radius:7px;font-size:15px;">Upload</a>
+                </div>
+
+                <div class="nav-user">
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="user-menu">
+                        <span class="material-icons">person</span>
+                        <span class="user-name">Profile</span>
+                        <span class="material-icons dropdown-icon" onclick="toggleProfileDropdown()">arrow_drop_down</span>
+                        <!-- Profile dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+                            <ul>
+                                <li class="profile-dropdown-item" onclick="location.href='customer-profile.html'"><span class="material-icons">person_outline</span> My Profile</li>
+                                <li class="profile-dropdown-item" onclick="logoutUser()"><span class="material-icons">logout</span> Logout</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Categories</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="index.html"><span class="material-icons">all_inclusive</span> All Services</a></li>
+                        <li><a href="tech-gadgets.html"><span class="material-icons">devices</span> Tech & Gadgets</a></li>
+                        <li><a href="food-delivery.html"><span class="material-icons">restaurant</span> Food & Delivery</a></li>
+                        <li><a href="skincare-beauty.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
+                        <li><a href="events-concerts.html"><span class="material-icons">event</span> Events & Concerts</a></li>
+                        <li><a href="fashion-accessories.html"><span class="material-icons">checkroom</span> Fashion & Accessories</a></li>
+                        <li class="active"><a href="home-services.html"><span class="material-icons">home_repair_service</span> Home Services</a></li>
+                        <li><a href="chinese-vendors.html"><span class="material-icons">local_florist</span> Chinese Vendors</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Types</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><span class="material-icons">cleaning_services</span> Cleaning</a></li>
+                        <li><a href="#"><span class="material-icons">local_laundry_service</span> Laundry</a></li>
+                        <li><a href="#"><span class="material-icons">build</span> Repairs</a></li>
+                        <li><a href="#"><span class="material-icons">moving</span> Moving Help</a></li>
+                        <li><a href="#"><span class="material-icons">home</span> Room Setup</a></li>
+                        <li><a href="#"><span class="material-icons">bolt</span> Electricals</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="sidebar-section">
+                    <h3>Quick Links</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><span class="material-icons">local_offer</span> Offers</a></li>
+                        <li><a href="#"><span class="material-icons">star</span> Best Pros</a></li>
+                        <li><a href="#"><span class="material-icons">safety_divider</span> Safe Service</a></li>
+                    </ul>
+                </div> -->
+            </aside>
+
+            <div class="sidebar-overlay"></div>
+
+            <main class="dashboard-main">
+                <section class="welcome-banner">
+                    <div class="banner-content">
+                        <h2>Home Services</h2>
+                        <p>Book cleaners, laundry, room repairs, and more, all from trusted hands on campus.</p>
+                    </div>
+<!--                     <div class="banner-cta">
+                        <button class="btn btn-primary">Filter Services</button>
+                    </div> -->
+                </section>
+                <section class="home-services-section">
+                    <div class="section-header">
+                        <h2>Available Home Services</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="img/IMG_1903.jpeg" alt="Room Cleaning" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-name">Room Cleaning</h3>
+                                <div class="product-description">Get a trusted cleaner to tidy your room, hostel, or apartment. Book a single or recurring cleaning service.</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1904.jpeg" alt="Laundry" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-name">Laundry</h3>
+                                <div class="product-description">Affordable laundry and ironing with pickup and delivery, handled by student pros.</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1905.jpeg" alt="Repairs & Maintenance" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-name">Repairs & Maintenance</h3>
+                                <div class="product-description">Need plumbing, electrical or small fixes? Find helpers for quick and reliable repairs on campus.</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1906.jpeg" alt="Moving Help" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-name">Moving Help</h3>
+                                <div class="product-description">Get help moving your belongings in and out of hostels or apartments.</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1907.jpeg" alt="Room Setup" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-name">Room Setup</h3>
+                                <div class="product-description">Assistance with furniture assembly, tech setup, curtains, and more for your campus room.</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1908.jpeg" alt="Electrical Services" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-name">Electrical Services</h3>
+                                <div class="product-description">Get help with sockets, charging points, fan and light repairs, and other electrical needs.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Vendo</h3>
+                    <p>Connecting university students with service providers within their campus.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Become a Vendor</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vendo. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/home-services.js"></script>
+</body>
+</html>

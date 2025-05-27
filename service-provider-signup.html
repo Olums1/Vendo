@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendo - Service Provider Sign Up</title>
+    <link rel="stylesheet" href="css/signup1.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="signup-container">
+            <div class="signup-card">
+                <div class="login-header">
+                    <div class="logo-bg">
+                        <div class="logo-content">
+                            <div class="nav-brand">
+                                <div class="text-white">Vendo</div>
+                            </div>
+                            <div class="decorative-elements">
+                                <div class="circle"></div>
+                                <div class="document document-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-section">
+                        <h2>Service Provider Sign Up</h2>
+                        <p>Join our marketplace to offer your services with ease.</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form id="serviceProviderForm">
+                        <div class="form-group">
+                            <label for="name">Name/Username</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <div class="custom-select">
+                                <select id="state" name="state" required>
+                                    <option value="" disabled selected>Select your state</option>
+                                    <!-- States will be populated via JavaScript -->
+                                </select>
+                                <div class="select-arrow"></div>
+                            </div>
+                            <span class="error-message" id="stateError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="business">Business/Service Rendered</label>
+                            <div class="custom-select">
+                                <select id="business" name="business" required>
+                                    <option value="" disabled selected>Select your service category</option>
+                                    <option value="Tech & Gadgets">Tech & Gadgets</option>
+                                    <option value="Food & Delivery">Food & Delivery</option>
+                                    <option value="Skincare & Beauty">Skincare & Beauty</option>
+                                    <option value="Events & Concerts">Events & Concerts</option>
+                                    <option value="Fashion & Accessories">Fashion & Accessories</option>
+                                    <option value="Home Services">Home Services</option>
+                                    <option value="Chinese Vendors">Chinese Vendors</option>
+                                </select>
+                                <div class="select-arrow"></div>
+                            </div>
+                            <span class="error-message" id="businessError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g., 08012345678" required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="password-container">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="toggle-password">👁️</button>
+                            </div>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="password-container">
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <button type="button" class="toggle-password">👁️</button>
+                            </div>
+                            <span class="error-message" id="confirmPasswordError"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                            <div class="form-footer">
+                                <p>Already have an account? <a href="signin.html">Sign In</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/states.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

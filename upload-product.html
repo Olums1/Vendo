@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Your Product - Vendo Vendor</title>
+    <link rel="stylesheet" href="css/signup1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/upload-product.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="upload-product-container" id="uploadProductAuthBox">
+    <div class="upload-header-row">
+      <button class="back-arrow-btn" type="button" aria-label="Go back">
+        <span class="material-icons">arrow_back</span>
+      </button>
+      <h2>Upload Your Product</h2>
+    </div>
+    <form id="uploadProductForm" autocomplete="off">
+        <div class="form-row">
+            <label class="form-label" for="productImage">Product Photo</label>
+            <input type="file" accept="image/*" id="productImage" class="form-input" required>
+            <img id="imgPreview" class="img-preview" style="display:none;"/>
+            <span class="error-message" id="imageError"></span>
+        </div>
+        <div class="form-row">
+            <label class="form-label" for="productName">Product Name</label>
+            <input type="text" id="productName" class="form-input" maxlength="50" required>
+            <span class="error-message" id="nameError"></span>
+        </div>
+        <div class="form-row">
+            <label class="form-label" for="productPrice">Price (₦)</label>
+            <input type="number" min="0" step="1" id="productPrice" class="form-input" required>
+            <span class="error-message" id="priceError"></span>
+        </div>
+        <div class="form-row">
+            <label class="form-label" for="productCategory">Product Category</label>
+            <select id="productCategory" required class="form-input">
+                <option value="" disabled selected>Select category</option>
+                <option>Tech & Gadgets</option>
+                <option>Food & Delivery</option>
+                <option>Skincare & Beauty</option>
+                <option>Events & Concerts</option>
+                <option>Fashion & Accessories</option>
+                <option>Home Services</option>
+            </select>
+            <span class="error-message" id="categoryError"></span>
+        </div>
+        <div class="form-row">
+            <label class="form-label" for="productDescription">Description</label>
+            <textarea id="productDescription" class="form-input" rows="3" maxlength="180" required></textarea>
+            <span class="error-message" id="descError"></span>
+        </div>
+        <div class="form-action">
+            <button class="btn-primary submit-btn" type="submit">Upload Product</button>
+        </div>
+    </form>
+  </div>
+  <script src="js/upload-product.js"></script>
+</body>
+</html>

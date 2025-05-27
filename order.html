@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Product</title>
+<link rel="stylesheet" href="css/order.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="order-container">
+  <div class="order-header">
+    <button class="order-back"><span class="material-icons">arrow_back</span></button>
+    <button class="order-fav"><span class="material-icons">favorite_border</span></button>
+  </div>
+  <div class="order-image-box">
+    <img src="img/iphonecase.jpeg" alt="Product" class="order-product-image" id="orderProductImage">
+  </div>
+  <div class="order-content">
+    <div class="order-main-details">
+      <div class="order-title-price">
+        <h2 class="order-product-title" id="orderProductName">iPhone Cases</h2>
+        <span class="order-product-price" id="orderProductPrice">&#8358;3,999</span>
+      </div>
+      <div class="order-qty-params">
+        <div class="order-qty">
+          <button class="qty-btn" id="qtyDecrease">-</button>
+          <span id="qtyCount">1</span>
+          <button class="qty-btn" id="qtyIncrease">+</button>
+        </div>
+      </div>
+      <div class="order-product-desc" id="orderProductDesc">
+        To protect your device from danage if it falls. Vendor below.
+      </div>
+    </div>
+    <div class="order-vendors">
+      <h3>Vendors</h3>
+      <div class="order-vendor-list">
+        <div class="order-vendor">
+          <img src="img/IMG_1907.jpeg" alt="Vendor" class="order-vendor-img">
+          <div class="order-vendor-details">
+            <div class="vendor-name"> OLUMS Tech Incoporations</div>
+          </div>
+          <button class="select-vendor-btn">Select</button>
+        </div>
+        <!-- More vendors... -->
+      </div>
+    </div>
+  </div>
+  <div class="order-buttons">
+    <button class="add-cart-btn">Add to Cart</button>
+    <button class="buy-now-btn">Buy Now</button>
+  </div>
+</div>
+<script src="order.js"></script>
+</body>
+</html>

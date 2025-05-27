@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Profile | Vendo</title>
+  <link rel="stylesheet" href="css/about-vendor.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/signup1.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html"><h1>Vendo</h1></a>
+            </div>
+
+            <div class="nav-upload-btn">
+                <a href="#" class="btn btn-primary upload-nav-btn"
+                style="background:#3f51b5;color:#fff;font-weight:600;padding:7px 18px;
+                border-radius:7px;font-size:15px;margin-right:20px;">Upload</a>
+            </div>
+
+            <div class="nav-user">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+                    </ul>
+                </div>
+                <div class="user-menu">
+                        <span class="material-icons">person</span>
+                        <span class="user-name">Profile</span>
+                        <span class="material-icons dropdown-icon" onclick="toggleProfileDropdown()">arrow_drop_down</span>
+                        <!-- Profile dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+                            <ul>
+                                <li class="profile-dropdown-item" onclick="location.href='customer-profile.html'"><span class="material-icons">person_outline</span> My Profile</li>
+                                <li class="profile-dropdown-item" onclick="logoutUser()"><span class="material-icons">logout</span> Logout</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </nav>
+  <div class="about-vendor-container">
+    <nav class="about-vendor-nav">
+      <button class="about-vendor-back"><span class="material-icons">arrow_back</span></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="about-vendor-hero">
+      <div class="about-vendor-image-box">
+        <img src="" id="aboutVendorImg" alt="Vendor Picture" class="about-vendor-img"/>
+      </div>
+      <div class="about-vendor-hero-content">
+        <div class="about-vendor-badges" id="aboutVendorBadges"></div>
+        <h2 class="about-vendor-name" id="aboutVendorName"></h2>
+        <div class="about-vendor-desc" id="aboutVendorDesc"></div>
+        <div class="about-vendor-stats" id="aboutVendorStats"></div>
+        <div class="about-vendor-action-buttons">
+          <button class="about-vendor-contact-btn" id="aboutVendorContact">
+            <span class="material-icons">chat</span> Contact Vendor
+          </button>
+          <button class="about-vendor-view-products-btn" id="aboutVendorViewProductsBtn">
+            <span class="material-icons">shopping_bag</span> View Products
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="vendor-tabs">
+      <button class="vendor-tab active" id="aboutTab" data-tab="about">
+        <span class="material-icons">info</span> About
+      </button>
+      <button class="vendor-tab" id="productsTab" data-tab="products">
+        <span class="material-icons">inventory_2</span> Products
+      </button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="tabContent">
+      <!-- About Tab Content -->
+      <div class="tab-content active" id="aboutContent">
+        <!-- About Section -->
+        <section class="about-vendor-about-section">
+          <h3>About this vendor</h3>
+          <div class="about-vendor-full-desc" id="aboutVendorFullDesc">
+            <!-- Long description will be inserted here -->
+          </div>
+
+          <div class="about-vendor-details">
+            <div class="about-vendor-detail-item">
+              <span class="material-icons">storefront</span>
+              <div>
+                <h4>Vendor Type</h4>
+                <p id="aboutVendorType"></p>
+              </div>
+            </div>
+            <div class="about-vendor-detail-item">
+              <span class="material-icons">location_on</span>
+              <div>
+                <h4>Location</h4>
+                <p id="aboutVendorLocation"></p>
+              </div>
+            </div>
+            <div class="about-vendor-detail-item">
+              <span class="material-icons">history</span>
+              <div>
+                <h4>Since</h4>
+                <p id="aboutVendorSince"></p>
+              </div>
+            </div>
+            <div class="about-vendor-detail-item">
+              <span class="material-icons">category</span>
+              <div>
+                <h4>Categories</h4>
+                <p id="aboutVendorCategories"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="about-vendor-contact-section">
+          <h3>Contact Information</h3>
+          <div class="about-vendor-contact-info">
+            <div class="about-vendor-contact-item">
+              <span class="material-icons">phone</span>
+              <div>
+                <h4>Phone</h4>
+                <p id="aboutVendorPhone"></p>
+              </div>
+            </div>
+            <div class="about-vendor-contact-item">
+              <span class="material-icons">email</span>
+              <div>
+                <h4>Email</h4>
+                <p id="aboutVendorEmail"></p>
+              </div>
+            </div>
+            <div class="about-vendor-contact-item">
+              <span class="material-icons">language</span>
+              <div>
+                <h4>Website</h4>
+                <p id="aboutVendorWebsite"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Products Tab Content -->
+      <div class="tab-content" id="productsContent">
+        <section class="products-section">
+          <h3>Products by this vendor</h3>
+
+          <div class="product-filters">
+            <span class="filter-title">Filter:</span>
+            <button class="filter-pill active" data-filter="all">All</button>
+            <button class="filter-pill" data-filter="smartphones">Smartphones</button>
+            <button class="filter-pill" data-filter="accessories">Accessories</button>
+            <button class="filter-pill" data-filter="audio">Audio</button>
+          </div>
+
+          <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here -->
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="about-vendor-footer">
+      <div>&copy; 2025 Vendo. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/vendor-products.js"></script>
+  <script src="js/about-vendor.js"></script>
+  <script>
+    // Tab switching functionality
+    document.querySelectorAll('.vendor-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        document.querySelectorAll('.vendor-tab').forEach(t => {
+          t.classList.remove('active');
+        });
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show the corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.getElementById(tabId + 'Content').classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

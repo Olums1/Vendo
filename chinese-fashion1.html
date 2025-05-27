@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Tech & Gadgets Vendors</title>
+    <link rel="stylesheet" href="css/signup1.css">
+    <link rel="stylesheet" href="css/chinese-fashion1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Reuse navigation -->
+        <nav class="main-navigation">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html"><h1>Vendo</h1></a>
+                </div>
+
+                <!-- Hamburger menu for mobile -->
+                <button class="sidebar-toggle" aria-label="Open menu">
+                    <span class="material-icons">menu</span>
+                </button>
+
+                <div class="nav-search">
+                    <button class="search-toggle" aria-label="Search">
+                        <span class="material-icons">search</span>
+                    </button>
+                    <div class="search-box-container">
+                        <div class="search-box">
+                            <span class="material-icons">search</span>
+                            <input type="text" placeholder="Search for services...">
+                            <button class="search-close" aria-label="Close search">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-upload-btn" style="position: absolute; left: 50%; transform: translateX(-50%);">
+                    <a href="upload-product.html" class="btn btn-primary upload-nav-btn"
+                    style="background:#3f51b5;color:#fff;font-weight:600;padding:7px 18px;
+                    border-radius:7px;font-size:15px;">Upload</a>
+                </div>
+
+                <div class="nav-user">
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="user-menu">
+                        <span class="material-icons">person</span>
+                        <span class="user-name"  onclick="toggleProfileDropdown()">Profile</span>
+                        <span class="material-icons dropdown-icon">arrow_drop_down</span>
+                        <!-- Profile dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+                            <ul>
+                                <li class="profile-dropdown-item" onclick="location.href='customer-profile.html'"><span class="material-icons">person_outline</span> My Profile</li>
+                                <li class="profile-dropdown-item" onclick="logoutUser()"><span class="material-icons">logout</span> Logout</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Categories</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="index.html"><span class="material-icons">all_inclusive</span> All Services</a></li>
+                        <li><a href="tech-gadgets.html"><span class="material-icons">devices</span> Tech & Gadgets</a></li>
+                        <li><a href="food-delivery.html"><span class="material-icons">restaurant</span> Food & Delivery</a></li>
+                        <li><a href="skincare-beauty.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
+                        <li><a href="events-concerts.html"><span class="material-icons">event</span> Events & Concerts</a></li>
+                        <li><a href="fashion-accessories.html"><span class="material-icons">checkroom</span> Fashion & Accessories</a></li>
+                        <li><a href="home-services.html"><span class="material-icons">home_repair_service</span> Home Services</a></li>
+                        <li class="active"><a href="chinese-vendors.html"><span class="material-icons">local_florist</span> Chinese Vendors</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Links</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="chinese-tech1.html"><span class="material-icons">devices</span> Tech & Gadgets</a></li>
+                        <li><a href="chinese-skin1.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
+                        <li class="active"><a href="chinese-fashion1.html"><span class="material-icons">checkroom</span> Fashion & Accessories</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="sidebar-overlay"></div>
+
+            <main class="dashboard-main">
+                <div class="page-header">
+                    <h1>Chinese Fashion & Accessories Vendors</h1>
+                    <p class="subtitle">Browse verified Chinese Fashion & Accessories Vendors</p>
+                </div>
+
+                <div class="vendors-container">
+                    <div class="vendor-card yellow">
+                        <div class="vendor-card-image-container">
+                            <img src="img/chinchun.jpg" alt="Herborist Beauty" class="vendor-card-bg">
+                        </div>
+                        <div class="vendor-card-content">
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified</span>
+                            </p>
+                            <div class="vendor-info">
+                                <h3>Herborist Beauty</h3>
+                                <p class="vendor-desc">Bringing heritage herbal skincare solutions with a modern Chinese touch—gentle, natural, and effective for all skin types.</p>
+                            </div>
+                            <div class="vendor-action">
+                                <a href="#" class="view-btn">View</a>
+                                <a href="#" class="view-btn">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="vendor-card blue">
+                        <div class="vendor-card-image-container">
+                            <img src="img/huawei2.jpg" alt="Yunnan Natural Glow" class="vendor-card-bg">
+                        </div>
+                        <div class="vendor-card-content">
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified</span>
+                            </p>
+                            <div class="vendor-info">
+                                <h3>Yunnan Natural Glow</h3>
+                                <p class="vendor-desc">Premium beauty brand inspired by Yunnan botanicals. Revitalize and brighten your skin with age-old Chinese plant wisdom.</p>
+                            </div>
+                            <div class="vendor-action">
+                                <a href="#" class="view-btn">View</a>
+                                <a href="#" class="view-btn">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="vendor-card red">
+                        <div class="vendor-card-image-container">
+                            <img src="img/nokia.jpg" alt="BioEssence Shanghai" class="vendor-card-bg">
+                        </div>
+                        <div class="vendor-card-content">
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified</span>
+                            </p>
+                            <div class="vendor-info">
+                                <h3>BioEssence Shanghai</h3>
+                                <p class="vendor-desc">Advanced skincare with a fusion of Eastern herbal science and state-of-the-art biotech for youthful, radiant skin.</p>
+                            </div>
+                            <div class="vendor-action">
+                                <a href="#" class="view-btn">View</a>
+                                <a href="#" class="view-btn">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="vendor-card green">
+                        <div class="vendor-card-image-container">
+                            <img src="img/chinamobile.jpg" alt="Scentaluxe by Luzhou" class="vendor-card-bg">
+                        </div>
+                        <div class="vendor-card-content">
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified</span>
+                            </p>
+                            <div class="vendor-info">
+                                <h3>Scentaluxe by Luzhou</h3>
+                                <p class="vendor-desc">Luxurious face and body care, enriched with rare Sichuan flowers and traditional Chinese aromatherapy secrets.</p>
+                            </div>
+                            <div class="vendor-action">
+                                <a href="#" class="view-btn">View</a>
+                                <a href="#" class="view-btn">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="vendor-card purple">
+                        <div class="vendor-card-image-container">
+                            <img src="img/huawei.jpg" alt="Xiao Zhen Beauty Lab" class="vendor-card-bg">
+                        </div>
+                        <div class="vendor-card-content">
+                            <p class="vendor-detail">
+                                <span class="material-icons">verified</span>
+                                <span>Verified</span>
+                            </p>
+                            <div class="vendor-info">
+                                <h3>Xiao Zhen Beauty Lab</h3>
+                                <p class="vendor-desc">Cutting-edge treatments and nourishing skincare blends, directly from Shenzhen’s leading dermaceutical labs.</p>
+                            </div>
+                            <div class="vendor-action">
+                                <a href="#" class="view-btn">View</a>
+                                <a href="#" class="view-btn">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Vendo</h3>
+                    <p>Connecting university students with service providers within their campus.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Become a Vendor</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vendo. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/chinese-fashion1.js"></script>
+</body>
+</html>

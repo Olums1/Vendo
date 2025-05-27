@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Details - Vendo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chinese-tech1.css">
+    <link rel="stylesheet" href="css/vendor-detail.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Reuse navigation -->
+        <nav class="main-navigation">
+            <div class="nav-container">
+                <div class="nav-brand"><a href="index.html"><h1>Vendo</h1></a></div>
+                <button class="sidebar-toggle" aria-label="Open menu"><span class="material-icons">menu</span></button>
+                <div class="nav-search"><div class="search-box"><span class="material-icons">search</span><input type="text" placeholder="Search for services..."></div></div>
+                <div class="nav-upload-btn"><a href="upload-product.html" class="btn btn-primary upload-nav-btn">Upload</a></div>
+                <div class="nav-user">
+                    <div class="nav-links"><ul><li><a href="index.html"><span class="material-icons">home</span> Home</a></li></ul></div>
+                    <div class="user-menu">
+                        <span class="material-icons">person</span>
+                        <span class="user-name">Profile</span>
+                        <span class="material-icons dropdown-icon" onclick="toggleProfileDropdown()">arrow_drop_down</span>
+                        <!-- Profile dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+                            <ul>
+                                <li class="profile-dropdown-item" onclick="__cpLocation.href='customer-profile.html'"><span class="material-icons">person_outline</span> My Profile</li>
+                                <li class="profile-dropdown-item" onclick="logoutUser()"><span class="material-icons">logout</span> Logout</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Categories</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="index.html"><span class="material-icons">all_inclusive</span> All Services</a></li>
+                        <li><a href="tech-gadgets.html"><span class="material-icons">devices</span> Tech & Gadgets</a></li>
+                        <li><a href="food-delivery.html"><span class="material-icons">restaurant</span> Food & Delivery</a></li>
+                        <li><a href="skincare-beauty.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
+                        <li><a href="events-concerts.html"><span class="material-icons">event</span> Events & Concerts</a></li>
+                        <li><a href="fashion-accessories.html"><span class="material-icons">checkroom</span> Fashion & Accessories</a></li>
+                        <li><a href="home-services.html"><span class="material-icons">home_repair_service</span> Home Services</a></li>
+                        <li class="active"><a href="chinese-vendors.html"><span class="material-icons">local_florist</span> Chinese Vendors</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="sidebar-overlay"></div>
+
+            <main class="dashboard-main">
+                <!-- Breadcrumb Navigation -->
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="material-icons">chevron_right</span>
+                    <a href="chinese-vendors.html">Chinese Vendors</a>
+                    <span class="material-icons">chevron_right</span>
+                    <span class="current" id="vendor-breadcrumb">Vendor Details</span>
+                </div>
+
+                <!-- Vendor Hero Section -->
+                <section class="vendor-hero">
+                    <div class="vendor-hero-bg" id="vendor-hero-bg">
+                        <!-- Background image will be set via JavaScript -->
+                    </div>
+                    <div class="vendor-hero-content">
+                        <div class="vendor-badge" id="vendor-badge">
+                            <span class="material-icons">verified</span>
+                            <span>Verified Vendor</span>
+                        </div>
+                        <h1 id="vendor-name">Vendor Name</h1>
+                        <div class="vendor-meta">
+                            <p id="vendor-category"><span class="material-icons">category</span> Tech & Gadgets</p>
+                            <p id="vendor-__cpLocation"><span class="material-icons">__cpLocation_on</span> Campus Area</p>
+                            <p id="vendor-rating">
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star_half</span>
+                                <span>(4.5)</span>
+                            </p>
+                        </div>
+                        <div class="vendor-actions">
+                            <button class="btn-contact">
+                                <span class="material-icons">message</span>
+                                Contact Vendor
+                            </button>
+                            <button class="btn-share">
+                                <span class="material-icons">share</span>
+                                Share
+                            </button>
+                            <button class="btn-favorite">
+                                <span class="material-icons">favorite_border</span>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vendor About Section -->
+                <section class="vendor-about">
+                    <div class="section-heading">
+                        <h2>About Vendor</h2>
+                    </div>
+                    <div class="vendor-about-content">
+                        <p id="vendor-description">Loading vendor description...</p>
+                    </div>
+                </section>
+
+                <!-- Vendor Products Section -->
+                <section class="vendor-products">
+                    <div class="section-heading">
+                        <h2>Products</h2>
+                        <div class="section-controls">
+                            <div class="product-filter">
+                                <select id="product-sort">
+                                    <option value="popularity">Sort by: Popularity</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                            <div class="view-controls">
+                                <span class="material-icons view-option active" data-view="grid">grid_view</span>
+                                <span class="material-icons view-option" data-view="list">view_list</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="products-container">
+                        <!-- Products will be dynamically loaded here -->
+                    </div>
+                </section>
+
+                <!-- Customer Reviews Section -->
+                <section class="vendor-reviews">
+                    <div class="section-heading">
+                        <h2>Customer Reviews</h2>
+                        <button class="btn-write-review">
+                            <span class="material-icons">rate_review</span>
+                            Write a Review
+                        </button>
+                    </div>
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <div class="rating-big">4.5</div>
+                            <div class="rating-stars">
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star</span>
+                                <span class="material-icons">star_half</span>
+                            </div>
+                            <div class="rating-count">Based on 42 reviews</div>
+                        </div>
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <span class="rating-label">5 stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 70%"></div>
+                                </div>
+                                <span class="rating-percent">70%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">4 stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 20%"></div>
+                                </div>
+                                <span class="rating-percent">20%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">3 stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 5%"></div>
+                                </div>
+                                <span class="rating-percent">5%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">2 stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 3%"></div>
+                                </div>
+                                <span class="rating-percent">3%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">1 star</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 2%"></div>
+                                </div>
+                                <span class="rating-percent">2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-list" id="reviews-container">
+                        <!-- Sample review -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <span class="material-icons">account_circle</span>
+                                    </div>
+                                    <div class="reviewer-details">
+                                        <h4>John D.</h4>
+                                        <div class="review-date">May 15, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>Great products and excellent service! I purchased a new smartphone and the vendor was very knowledgeable about all the features. Quick delivery and fair prices.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Sample review -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <span class="material-icons">account_circle</span>
+                                    </div>
+                                    <div class="reviewer-details">
+                                        <h4>Sarah M.</h4>
+                                        <div class="review-date">May 10, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star</span>
+                                    <span class="material-icons">star_border</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>Good selection of gadgets at reasonable prices. Would recommend checking their stock before visiting as some popular items sell out quickly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-pagination">
+                        <button class="btn-pagination active">1</button>
+                        <button class="btn-pagination">2</button>
+                        <button class="btn-pagination">3</button>
+                        <button class="btn-pagination">
+                            <span class="material-icons">chevron_right</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Related Vendors Section -->
+                <section class="related-vendors">
+                    <div class="section-heading">
+                        <h2>Similar Vendors</h2>
+                    </div>
+                    <div class="related-vendors-grid">
+                        <!-- Similar vendors will be dynamically loaded here -->
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Vendo</h3>
+                    <p>Connecting university students with service providers within their campus.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Become a Vendor</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vendo. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/vendor-profile.js"></script>
+</body>
+</html>

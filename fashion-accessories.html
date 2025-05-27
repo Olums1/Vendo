@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion & Accessories - Vendo</title>
+    <link rel="stylesheet" href="css/signup1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fashion-accessories.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        /* Order Drawer/Modal Styles */
+        .order-drawer-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.35);
+            z-index: 1001;
+            opacity: 1;
+            transition: opacity 0.2s;
+        }
+        .order-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 420px;
+            max-width: 100vw;
+            height: 100vh;
+            background: #fff;
+            box-shadow: -2px 0 16px rgba(0,0,0,0.12);
+            z-index: 1002;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+            display: flex;
+            flex-direction: column;
+        }
+        .order-drawer.open {
+            transform: translateX(0);
+        }
+        .order-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 1.5rem 1rem 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        .order-drawer-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .order-drawer-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #333;
+        }
+        .order-drawer-content {
+            padding: 1.5rem;
+            flex: 1 1 auto;
+            overflow-y: auto;
+        }
+        .order-drawer-product {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .order-drawer-product img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #f7f7f7;
+        }
+        .order-drawer-product-details {
+            flex: 1;
+        }
+        .order-drawer-product-details h4 {
+            margin: 0 0 0.3rem 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .order-drawer-product-details .category {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+        .order-drawer-product-details .price {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1a8917;
+            margin-bottom: 0.7rem;
+        }
+        .order-drawer-actions {
+            display: flex;
+            gap: 0.7rem;
+            margin-top: 1.2rem;
+        }
+        .order-drawer-actions button {
+            flex: 1;
+            padding: 0.7rem 0;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .order-drawer-actions .add-to-cart {
+            background: #f5f5f5;
+            color: #222;
+            border: 1px solid #ddd;
+        }
+        .order-drawer-actions .buy-now {
+            background: #1a8917;
+            color: #fff;
+        }
+        @media (max-width: 700px) {
+            .order-drawer {
+                width: 100vw;
+                max-width: 100vw;
+                left: 0;
+                right: 0;
+                border-radius: 0;
+            }
+            .order-drawer-header, .order-drawer-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .order-drawer-product img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        @media (max-width: 480px) {
+            .order-drawer-header, .order-drawer-content {
+                padding-left: 0.7rem;
+                padding-right: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Main Navigation -->
+        <nav class="main-navigation">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html"><h1>Vendo</h1></a>
+                </div>
+
+                <!-- Hamburger menu for mobile -->
+                <button class="sidebar-toggle" aria-label="Open menu">
+                    <span class="material-icons">menu</span>
+                </button>
+
+                <div class="nav-search">
+                    <button class="search-toggle" aria-label="Search">
+                        <span class="material-icons">search</span>
+                    </button>
+                    <div class="search-box-container">
+                        <div class="search-box">
+                            <span class="material-icons">search</span>
+                            <input type="text" placeholder="Search for services...">
+                            <button class="search-close" aria-label="Close search">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-upload-btn" style="position: absolute; left: 50%; transform: translateX(-50%);">
+                    <a href="upload-product.html" class="btn btn-primary upload-nav-btn"
+                    style="background:#3f51b5;color:#fff;font-weight:600;padding:7px 18px;
+                    border-radius:7px;font-size:15px;">Upload</a>
+                </div>
+
+                <div class="nav-user">
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="user-menu">
+                        <span class="material-icons">person</span>
+                        <span class="user-name">Profile</span>
+                        <span class="material-icons dropdown-icon" onclick="toggleProfileDropdown()">arrow_drop_down</span>
+                        <!-- Profile dropdown -->
+                        <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+                            <ul>
+                                <li class="profile-dropdown-item" onclick="location.href='customer-profile.html'"><span class="material-icons">person_outline</span> My Profile</li>
+                                <li class="profile-dropdown-item" onclick="logoutUser()"><span class="material-icons">logout</span> Logout</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Categories</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="index.html"><span class="material-icons">all_inclusive</span> All Services</a></li>
+                        <li><a href="tech-gadgets.html"><span class="material-icons">devices</span> Tech & Gadgets</a></li>
+                        <li><a href="food-delivery.html"><span class="material-icons">restaurant</span> Food & Delivery</a></li>
+                        <li><a href="skincare-beauty.html"><span class="material-icons">spa</span> Skincare & Beauty</a></li>
+                        <li><a href="events-concerts.html"><span class="material-icons">event</span> Events & Concerts</a></li>
+                        <li class="active"><a href="fashion-accessories.html"><span class="material-icons">checkroom</span> Fashion & Accessories</a></li>
+                        <li><a href="home-services.html"><span class="material-icons">home_repair_service</span> Home Services</a></li>
+                        <li><a href="chinese-vendors.html"><span class="material-icons">local_florist</span> Chinese Vendors</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Filter By</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><span class="material-icons">man</span> Men</a></li>
+                        <li><a href="#"><span class="material-icons">woman</span> Women</a></li>
+                        <li><a href="#"><span class="material-icons">hiking</span> Footwear</a></li>
+                        <li><a href="#"><span class="material-icons">work</span> Bags</a></li>
+                        <li><a href="#"><span class="material-icons">watch</span> Accessories</a></li>
+                        <li><a href="#"><span class="material-icons">visibility</span> Eyewear</a></li>
+                        <li><a href="#"><span class="material-icons">diamond</span> Jewelry</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="sidebar-section">
+                    <h3>Quick Links</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><span class="material-icons">local_offer</span> Offers</a></li>
+                        <li><a href="#"><span class="material-icons">star</span> Best Sellers</a></li>
+                        <li><a href="#"><span class="material-icons">people</span> New Arrivals</a></li>
+                    </ul>
+                </div> -->
+            </aside>
+
+            <div class="sidebar-overlay"></div>
+
+            <main class="dashboard-main">
+                <section class="welcome-banner">
+                    <div class="banner-content">
+                        <h2>Fashion & Accessories</h2>
+                        <p>Shop trending outfits, shoes, bags, and more. Find your style today!</p>
+                    </div>
+                    <!-- <div class="banner-cta">
+                        <button class="btn btn-primary">Filter Products</button>
+                    </div> -->
+                </section>
+                <section class="services-section">
+                    <div class="section-header">
+                        <h2>Trending Fashion & Accessories</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="img/IMG_1887.jpeg" alt="Men's Classic Sneakers" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Footwear</div>
+                                <h3 class="product-name">Men's Classic Sneakers</h3>
+                                <div class="product-price">&#8358;45,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1888.jpeg" alt="Women's Handbag" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Bags</div>
+                                <h3 class="product-name">Women's Handbag</h3>
+                                <div class="product-price">&#8358;5,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1889.jpeg" alt="Designer Sunglasses" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Eyewear</div>
+                                <h3 class="product-name">Designer Sunglasses</h3>
+                                <div class="product-price">&#8358;22,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1890.jpeg" alt="Unisex T-Shirt" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Apparel</div>
+                                <h3 class="product-name">Unisex T-Shirt</h3>
+                                <div class="product-price">&#8358;14,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1891.jpeg" alt="Ladies’ Watch" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Accessories</div>
+                                <h3 class="product-name">Ladies’ Watch</h3>
+                                <div class="product-price">&#8358;17,500</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1893.jpeg" alt="Gold Plated Earrings" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Jewelry</div>
+                                <h3 class="product-name">Gold Plated Earrings</h3>
+                                <div class="product-price">&#8358;7,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1894.jpeg" alt="Men's Leather Belt" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Accessories</div>
+                                <h3 class="product-name">Men's Leather Belt</h3>
+                                <div class="product-price">&#8358;8,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1895.jpeg" alt="Ladies’ Sandals" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Footwear</div>
+                                <h3 class="product-name">Ladies’ Sandals</h3>
+                                <div class="product-price">&#8358;5,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/IMG_1896.jpeg" alt="Men’s Bracelet" class="product-image">
+                            <div class="product-info">
+                                <div class="product-category">Jewelry</div>
+                                <h3 class="product-name">Men’s Bracelet</h3>
+                                <div class="product-price">&#8358;3,000</div>
+
+                                <div class="product-actions">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                    <button class="buy-now">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Vendo</h3>
+                    <p>Connecting university students with service providers within their campus.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Become a Vendor</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vendo. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/fashion-accessories.js"></script>
+</body>
+</html>
